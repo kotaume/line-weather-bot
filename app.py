@@ -34,4 +34,6 @@ def send_line_message(message: str):
     response = requests.post(url, headers=headers, json=body)
     print("LINE送信結果:", response.status_code, response.text)
 
-send_line_message(message)
+if __name__ == "__main__":
+    message = get_weather_message()
+    send_line_message(message)
